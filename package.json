@@ -1,0 +1,21 @@
+{
+  "name": "rwanda",
+  "description": "It returns provinces, districts, sectors, villages and cells found in Rwanda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/knowbee/rwanda.git"
+  },
+  "keywords": [
+    "rwanda",
+    "urwanda",
+    "intara",
+    "u rwanda",
+    "imirenge",
+    "utugari"
+  ],
+  "author": "Igwaneza Bruce <knowbeeinc@gmail.com>",
+  "homepage": "https://github.com/knowbee/rwanda"
+}
