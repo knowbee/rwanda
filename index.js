@@ -46,3 +46,16 @@ exports.Sector = (province, district) => {
     return undefined;
   }
 };
+exports.Villages = () => {
+  let villages = [];
+  for (let province of Object.keys(datafile)) {
+    for (let district of Object.keys(datafile[province])) {
+      for (let sector of Object.keys(datafile[province][district])) {
+        for (let village of Object.keys(datafile[province][district][sector])) {
+          villages.push(village);
+        }
+      }
+    }
+  }
+  return villages;
+};
