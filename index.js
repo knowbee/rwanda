@@ -46,20 +46,20 @@ exports.Sector = (province, district) => {
     return undefined;
   }
 };
-exports.Villages = () => {
-  let villages = [];
+exports.Cells = () => {
+  let cells = [];
   for (let province of Object.keys(datafile)) {
     for (let district of Object.keys(datafile[province])) {
       for (let sector of Object.keys(datafile[province][district])) {
-        for (let village of Object.keys(datafile[province][district][sector])) {
-          villages.push(village);
+        for (let cell of Object.keys(datafile[province][district][sector])) {
+          cells.push(cell);
         }
       }
     }
   }
-  return villages;
+  return cells;
 };
-exports.Village = (province, district, sector) => {
+exports.Cell = (province, district, sector) => {
   if (
     Object.keys(datafile).includes(formatInput(province)) &&
     Object.keys(datafile[formatInput(province)]).includes(
@@ -78,24 +78,24 @@ exports.Village = (province, district, sector) => {
     return undefined;
   }
 };
-exports.Cells = () => {
-  let cells = [];
+exports.Villages = () => {
+  let villages = [];
   for (let province of Object.keys(datafile)) {
     for (let district of Object.keys(datafile[province])) {
       for (let sector of Object.keys(datafile[province][district])) {
-        for (let village of Object.keys(datafile[province][district][sector])) {
-          for (let cell of Object.keys(
-            datafile[province][district][sector][village]
+        for (let cell of Object.keys(datafile[province][district][sector])) {
+          for (let village of Object.keys(
+            datafile[province][district][sector][cell]
           )) {
-            cells.push(datafile[province][district][sector][village][cell]);
+            villages.push(datafile[province][district][sector][village][cell]);
           }
         }
       }
     }
   }
-  return cells;
+  return villages;
 };
-exports.Cell = (province, district, sector, village) => {
+exports.Village = (province, district, sector, cell) => {
   if (
     Object.keys(datafile).includes(formatInput(province)) &&
     Object.keys(datafile[formatInput(province)]).includes(
@@ -108,11 +108,11 @@ exports.Cell = (province, district, sector, village) => {
       datafile[formatInput(province)][formatInput(district)][
         formatInput(sector)
       ]
-    ).includes(formatInput(village))
+    ).includes(formatInput(cell))
   ) {
     return datafile[formatInput(province)][formatInput(district)][
       formatInput(sector)
-    ][formatInput(village)];
+    ][formatInput(cell)];
   } else {
     return undefined;
   }
