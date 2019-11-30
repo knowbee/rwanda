@@ -59,3 +59,22 @@ exports.Villages = () => {
   }
   return villages;
 };
+exports.Village = (province, district, sector) => {
+  if (
+    Object.keys(datafile).includes(formatInput(province)) &&
+    Object.keys(datafile[formatInput(province)]).includes(
+      formatInput(district)
+    ) &&
+    Object.keys(
+      datafile[formatInput(province)][formatInput(district)]
+    ).includes(formatInput(sector))
+  ) {
+    return Object.keys(
+      datafile[formatInput(province)][formatInput(district)][
+        formatInput(sector)
+      ]
+    );
+  } else {
+    return undefined;
+  }
+};
