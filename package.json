@@ -1,7 +1,7 @@
 {
   "name": "rwanda",
   "description": "It returns provinces, districts, sectors, villages and cells found in Rwanda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "repository": {
