@@ -95,3 +95,25 @@ exports.Cells = () => {
   }
   return cells;
 };
+exports.Cell = (province, district, sector, village) => {
+  if (
+    Object.keys(datafile).includes(formatInput(province)) &&
+    Object.keys(datafile[formatInput(province)]).includes(
+      formatInput(district)
+    ) &&
+    Object.keys(
+      datafile[formatInput(province)][formatInput(district)]
+    ).includes(formatInput(sector)) &&
+    Object.keys(
+      datafile[formatInput(province)][formatInput(district)][
+        formatInput(sector)
+      ]
+    ).includes(formatInput(village))
+  ) {
+    return datafile[formatInput(province)][formatInput(district)][
+      formatInput(sector)
+    ][formatInput(village)];
+  } else {
+    return undefined;
+  }
+};
