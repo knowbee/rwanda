@@ -1,5 +1,11 @@
 # rwanda
 
+[![Build Status](https://travis-ci.org/knowbee/rwanda.svg?branch=master)](https://travis-ci.org/knowbee/rwanda)
+[![npm](https://img.shields.io/npm/dt/rwanda.svg)](https://www.npmjs.com/package/rwanda)
+[![Dependency Status](https://david-dm.org/knowbee/rwanda.svg)](https://david-dm.org/knowbee/rwanda)
+
+[![NPM](https://nodei.co/npm/rwanda.png)](https://nodei.co/npm/rwanda/)
+
 This is a simple npm package that returns provinces, districts, sectors, villages and cells found in Rwanda.
 
 Rwanda is organized in four provinces in addition to the Kigali city, 30 Districts, 416 Sectors, 2148 Cells and 14 837 Villages.
