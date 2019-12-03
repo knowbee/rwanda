@@ -54,7 +54,7 @@ members of the project's leadership.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
+This Code of Conduct is adapted from the [Contributor Covenant](./CONTRIBUTOR_COVENANT.md), version 1.4,
 available at [http://contributor-covenant.org/version/1/4][version]
 
 [homepage]: https://www.contributor-covenant.org/version/2/0/code_of_conduct
