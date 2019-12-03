@@ -1,7 +1,7 @@
 const { datafile } = require("./data");
 
 const formatInput = name => {
-  return name.charAt(0).toUpperCase() + name.substring(1);
+  return name ? name.charAt(0).toUpperCase() + name.substring(1) : undefined;
 };
 
 exports.Provinces = () => {
