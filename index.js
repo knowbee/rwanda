@@ -9,9 +9,9 @@ exports.Provinces = () => {
 };
 
 exports.Districts = () => {
-  let districts = [];
-  for (let province of Object.keys(datafile)) {
-    for (let district of Object.keys(datafile[province])) {
+  const districts = [];
+  for (const province of Object.keys(datafile)) {
+    for (const district of Object.keys(datafile[province])) {
       districts.push(district);
     }
   }
@@ -21,15 +21,14 @@ exports.Districts = () => {
 exports.District = province => {
   if (Object.keys(datafile).includes(formatInput(province))) {
     return Object.keys(datafile[formatInput(province)]);
-  } else {
-    return undefined;
   }
+  return undefined;
 };
 exports.Sectors = () => {
-  let sectors = [];
-  for (let province of Object.keys(datafile)) {
-    for (let district of Object.keys(datafile[province])) {
-      for (let sector of Object.keys(datafile[province][district])) {
+  const sectors = [];
+  for (const province of Object.keys(datafile)) {
+    for (const district of Object.keys(datafile[province])) {
+      for (const sector of Object.keys(datafile[province][district])) {
         sectors.push(sector);
       }
     }
@@ -42,16 +41,15 @@ exports.Sector = (province, district) => {
     Object.keys(datafile[province]).includes(formatInput(district))
   ) {
     return Object.keys(datafile[formatInput(province)][formatInput(district)]);
-  } else {
-    return undefined;
   }
+  return undefined;
 };
 exports.Cells = () => {
-  let cells = [];
-  for (let province of Object.keys(datafile)) {
-    for (let district of Object.keys(datafile[province])) {
-      for (let sector of Object.keys(datafile[province][district])) {
-        for (let cell of Object.keys(datafile[province][district][sector])) {
+  const cells = [];
+  for (const province of Object.keys(datafile)) {
+    for (const district of Object.keys(datafile[province])) {
+      for (const sector of Object.keys(datafile[province][district])) {
+        for (const cell of Object.keys(datafile[province][district][sector])) {
           cells.push(cell);
         }
       }
@@ -74,17 +72,16 @@ exports.Cell = (province, district, sector) => {
         formatInput(sector)
       ]
     );
-  } else {
-    return undefined;
   }
+  return undefined;
 };
 exports.Villages = () => {
-  let villages = [];
-  for (let province of Object.keys(datafile)) {
-    for (let district of Object.keys(datafile[province])) {
-      for (let sector of Object.keys(datafile[province][district])) {
-        for (let cell of Object.keys(datafile[province][district][sector])) {
-          for (let village of Object.keys(
+  const villages = [];
+  for (const province of Object.keys(datafile)) {
+    for (const district of Object.keys(datafile[province])) {
+      for (const sector of Object.keys(datafile[province][district])) {
+        for (const cell of Object.keys(datafile[province][district][sector])) {
+          for (const village of Object.keys(
             datafile[province][district][sector][cell]
           )) {
             villages.push(datafile[province][district][sector][village][cell]);
@@ -113,7 +110,6 @@ exports.Village = (province, district, sector, cell) => {
     return datafile[formatInput(province)][formatInput(district)][
       formatInput(sector)
     ][formatInput(cell)];
-  } else {
-    return undefined;
   }
+  return undefined;
 };

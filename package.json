@@ -8,6 +8,16 @@
     "type": "git",
     "url": "git://github.com/knowbee/rwanda.git"
   },
+  "scripts": {
+    "lint": "eslint .",
+    "fix-lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "coveralls": "3.0.9",
+    "eslint": ">=6.7.2",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.18.2"
+  },
   "keywords": [
     "rwanda",
     "urwanda",

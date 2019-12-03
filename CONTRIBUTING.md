@@ -65,7 +65,7 @@ Bear in mind this when altering and/or extending the sources.
 
 # Important
 
-- Please make sure that you run both tests before making a PR.
+- Please make sure that you run tests before making a PR.
 
 ## Contributor Code of Conduct
 
