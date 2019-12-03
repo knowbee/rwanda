@@ -100,6 +100,12 @@ It returns `undefined` if either province, district , sector or cell is not foun
 npm install rwanda
 ```
 
+or
+
+```cli
+yarn add rwanda
+```
+
 ## License
 
 MIT
