@@ -84,7 +84,7 @@ exports.Villages = () => {
           for (const village of Object.keys(
             datafile[province][district][sector][cell]
           )) {
-            villages.push(datafile[province][district][sector][village][cell]);
+            villages.push(datafile[province][district][sector][cell][village]);
           }
         }
       }
