@@ -36,6 +36,39 @@ Always make your change to `develop` as it is the branch for QA testing and feat
 
 Your change should be made directly to the branch in your fork, or to a branch in your fork made off of one of the above branches.
 
+### Branch Naming
+
+Branches created should be named using the following format:
+
+```
+{type}-{2-3 word summary separated with hyphen}
+```
+
+type:
+
+- feature
+- bug
+- chore
+- refactor
+
+summary:
+
+```
+feature-refactor-data-file
+```
+
+### PR Description Template
+
+The description of the PR should contain the following headings and corresponding content in Markdown format.
+
+```
+#### What does this PR do?
+#### Description of Task to be completed?
+#### How should this be manually tested?
+#### Any background context you want to provide?
+#### Screenshots (if appropriate)
+```
+
 ### Testing Your Change
 
 You can run these tests by running `npm run test` from the command line. If you fix a bug please add a test that will catch that bug if it ever happens again. This prevents regressions from sneaking in.
