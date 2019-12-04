@@ -10,6 +10,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc mocha ./test/* --exit",
     "fix-lint": "eslint . --fix"
   },
