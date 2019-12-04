@@ -54,7 +54,7 @@ type:
 summary:
 
 ```
-feature-refactor-data-file
+feature-refactor-data
 ```
 
 ### PR Description Template
