@@ -1,4 +1,4 @@
-const { datafile } = require("./data");
+const datafile = require("./data/provinces");
 
 const formatInput = name => {
   return name ? name.charAt(0).toUpperCase() + name.substring(1) : undefined;
