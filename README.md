@@ -107,6 +107,10 @@ or
 yarn add rwanda
 ```
 
+# Contribution
+
+- Please before making a PR, read first this [Contributing Guideline](./CONTRIBUTING.md)
+
 ## License
 
 MIT
