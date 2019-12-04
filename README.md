@@ -1,6 +1,7 @@
 # rwanda
 
 [![Build Status](https://travis-ci.org/knowbee/rwanda.svg?branch=master)](https://travis-ci.org/knowbee/rwanda)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2538854db9018e7561ac/maintainability)](https://codeclimate.com/github/knowbee/smartbot/maintainability)
 [![npm](https://img.shields.io/npm/dt/rwanda.svg)](https://www.npmjs.com/package/rwanda)
 [![Dependency Status](https://david-dm.org/knowbee/rwanda.svg)](https://david-dm.org/knowbee/rwanda)
 [![npm](https://img.shields.io/npm/v/rwanda.svg)](https://www.npmjs.com/package/rwanda)
