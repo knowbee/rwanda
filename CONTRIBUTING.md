@@ -44,17 +44,17 @@ Branches created should be named using the following format:
 {type}-{2-3 word summary separated with hyphen}
 ```
 
-type:
+Type:
 
 - feature
 - bug
 - chore
 - refactor
 
-summary:
+Example:
 
 ```
-feature-refactor-data-file
+refactor-data
 ```
 
 ### PR Description Template
