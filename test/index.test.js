@@ -24,7 +24,7 @@ describe("Rwanda", async () => {
         "West"
       ]);
     });
-    it("length of provinces should equql 5", function() {
+    it("should return length of provinces equal to 5", function() {
       const provinces = Provinces();
       const length = provinces.length;
       expect(length).to.equal(5);
@@ -72,7 +72,7 @@ describe("Rwanda", async () => {
       const type = typeof districts;
       expect(type).to.equal("object");
     });
-    it("length of districts should equal 30", function() {
+    it("should return length of districts equal to 30", function() {
       const districts = Districts();
       const length = districts.length;
       expect(length).to.equal(30);
@@ -80,7 +80,7 @@ describe("Rwanda", async () => {
   });
 
   describe("getting sectors", () => {
-    it("length of sectors should equal 416", function() {
+    it("should return length of sectors equal to 416", function() {
       const sectors = Sectors();
       const length = sectors.length;
       const type = typeof sectors;
@@ -98,7 +98,7 @@ describe("Rwanda", async () => {
     });
   });
   describe("getting cells", () => {
-    it("length of cells should equal 2149", function() {
+    it("should return length of cells equal to 2149", function() {
       const cells = Cells();
       const length = cells.length;
       const type = typeof cells;
@@ -117,7 +117,7 @@ describe("Rwanda", async () => {
   });
 
   describe("getting villages", () => {
-    it("length of villages should equal 14837", function() {
+    it("should return length of villages equal to 14837", function() {
       const villages = Villages();
       const length = villages.length;
       const type = typeof villages;
