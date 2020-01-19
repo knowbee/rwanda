@@ -1,7 +1,7 @@
 {
   "name": "rwanda",
   "description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "main": "index.js",
   "license": "MIT",
   "repository": {
