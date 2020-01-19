@@ -107,6 +107,12 @@ or
 yarn add rwanda
 ```
 
+# Contributors
+
+| [<img src="https://github.com/oesukam.png" width="100px;"><br><sub><b>Olivier Esuka</b></sub>](https://github.com/oesukam) | [<img src="https://github.com/knowbee.png" width="100px;"><br><sub><b>Igwaneza Bruce</b></sub>](https://github.com/knowbee) |
+| :------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
+
+
 # Contribution
 
 - Please before making a PR, read first this [Contributing Guideline](./CONTRIBUTING.md)
