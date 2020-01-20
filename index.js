@@ -40,7 +40,7 @@ exports.Sectors = () => {
 exports.Sector = (province, district) => {
   if (
     Object.keys(datafile).includes(formatInput(province)) &&
-    Object.keys(datafile[province]).includes(formatInput(district))
+    Object.keys(datafile[formatInput(province)]).includes(formatInput(district))
   ) {
     return Object.keys(datafile[formatInput(province)][formatInput(district)]);
   }
