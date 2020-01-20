@@ -1,0 +1,7 @@
+.npmignore
+.eslintignore
+.eslintrc
+yarn.lock
+CONTRIBUTING.md
+CONTRIBUTOR_COVENANT.md
+test/*
