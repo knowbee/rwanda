@@ -7,7 +7,7 @@
 module.exports = {
   "Nyabisindu": [
     "Amarembo I",
-    "Amarembo Il",
+    "Amarembo II",
     "Gihogere",
     "Kagara",
     "Kinunga",
