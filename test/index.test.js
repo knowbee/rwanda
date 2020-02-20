@@ -69,8 +69,7 @@ describe("Rwanda", async () => {
     });
     it("should return array of districts of a province", function() {
       const districts = District("Kigali");
-      const type = typeof districts;
-      expect(type).to.equal("object");
+      expect(typeof districts).to.equal("object");
     });
     it("should return length of districts equal to 30", function() {
       const districts = Districts();
@@ -83,14 +82,12 @@ describe("Rwanda", async () => {
     it("should return length of sectors equal to 416", function() {
       const sectors = Sectors();
       const length = sectors.length;
-      const type = typeof sectors;
       expect(length).to.equal(416);
-      expect(type).to.equal("object");
+      expect(typeof sectors).to.equal("object");
     });
     it("should return array of sectors of a district", function() {
       const sectors = Sector("South", "Huye");
-      const type = typeof sectors;
-      expect(type).to.equal("object");
+      expect(typeof sectors).to.equal("object");
     });
     it("should return undefined", function() {
       const sectors = Sector("South");
@@ -101,9 +98,8 @@ describe("Rwanda", async () => {
     it("should return length of cells equal to 2149", function() {
       const cells = Cells();
       const length = cells.length;
-      const type = typeof cells;
       expect(length).to.equal(2149);
-      expect(type).to.equal("object");
+      expect(typeof cells).to.equal("object");
     });
     it("should return array of cells of a sector", function() {
       const cells = Cell("South", "Huye", "Tumba");
@@ -120,16 +116,22 @@ describe("Rwanda", async () => {
     it("should return length of villages equal to 14837", function() {
       const villages = Villages();
       const length = villages.length;
-      const type = typeof villages;
       expect(length).to.equal(14837);
-      expect(type).to.equal("object");
+      expect(typeof villages).to.equal("object");
     });
     it("should return array of villages of a cell", function() {
       const villages = Village("South", "Huye", "Tumba", "Cyarwa");
-      const type = typeof villages;
-      expect(type).to.equal("object");
+      expect(typeof villages).to.equal("object");
     });
-    it("should return undefined", function() {
+    it("should return array of villages of a cell", function() {
+      const villages = Village("Kigali", "Gasabo", "Remera", "Rukiri I");
+      expect(typeof villages).to.equal("object");
+    });
+    it("should return undefined when there is a typo", function() {
+      const villages = Village("Kigali", "Gasabo", "Remera", "RukiriI");
+      expect(villages).to.equal(undefined);
+    });
+    it("should return undefined when incomplete", function() {
       const villages = Village("South", "Huye", "Tumba");
       expect(villages).to.equal(undefined);
     });
