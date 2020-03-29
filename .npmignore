@@ -6,3 +6,4 @@ CONTRIBUTING.md
 CONTRIBUTOR_COVENANT.md
 test/*
 .nyc_output
+.travis.yml
