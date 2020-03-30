@@ -63,7 +63,7 @@ Returns array of country provinces.
 
 Returns array of country districts.
 
-### Sectors(name)
+### Sectors()
 
 Returns array of country sectors.
 
