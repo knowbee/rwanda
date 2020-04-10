@@ -45,7 +45,7 @@ const {
   District,
   Sector,
   Cell,
-  Village
+  Village,
 } = require("rwanda");
 ```
 
@@ -92,7 +92,7 @@ It returns `undefined` if either province, district or sector is not found.
 
 ### Village(province, district, sector, cell)
 
-Returns an array of Cells found in the given province, district, sector and cell.
+Returns an array of Villages found in the given province, district, sector and cell.
 It returns `undefined` if either province, district , sector or cell is not found.
 
 ## Install
