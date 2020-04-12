@@ -26,27 +26,23 @@ console.log(Districts()); // [ 'Bugesera', 'Gatsibo', 'Kayonza', 'Kirehe',...]
 And how to get districts of a given province
 
 ```js
-const { District } = require("rwanda");
+const { Districts } = require("rwanda");
 
-console.log(District("kigali")); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
+console.log(Districts("kigali")); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
 ```
 
 ## Methods
 
-Usage:
+- [Provinces()](#provinces)
+- [Districts()](#districts)
+- [Sectors()](#sectors)
+- [Cells()](#cells)
+- [Villages()](#villages)
+
+## Usage
 
 ```js
-const {
-  Provinces,
-  Districts,
-  Sectors,
-  Cells,
-  Villages,
-  District,
-  Sector,
-  Cell,
-  Village,
-} = require("rwanda");
+const { Provinces, Districts, Sectors, Cells, Villages } = require("rwanda");
 ```
 
 All inputs are case-insensitive.
@@ -61,39 +57,39 @@ Returns array of country provinces.
 
 ### Districts()
 
-Returns array of country districts.
+By default it returns an array of country districts, if no params (province) is given
+
+- #### Districts(province)
+
+  If province is given it returns an array of districts found in that province.
+  It returns `undefined` if province is not found.
 
 ### Sectors()
 
-Returns array of country sectors.
+By default it returns array of country sectors, if no params (province, district) are given
+
+- #### Sectors(province, district)
+
+  If province and district are given it returns an array of sectors found from the given district in that province.
+  It returns `undefined` if either province or district is not found.
 
 ### Cells()
 
-Returns an array of all country cells.
+By default it returns an array of all country cells.
+
+- ### Cells(province, district, sector)
+
+  if province, district and sector are given it returns an array of Cells found from the given sector.
+  It returns `undefined` if either province, district or sector is not found.
 
 ### Villages()
 
-Returns an array of all country villages.
+By default it returns an array of all country villages.
 
-### District(province)
+- ### Villages(province, district, sector, cell)
 
-Returns an array of districts found in the given province.
-It returns `undefined` if province is not found.
-
-### Sector(province, district)
-
-Returns an array of sectors found in the given province and district.
-It returns `undefined` if either province or district is not found.
-
-### Cell(province, district, sector)
-
-Returns an array of Cells found in the given province, district, and sector.
-It returns `undefined` if either province, district or sector is not found.
-
-### Village(province, district, sector, cell)
-
-Returns an array of Villages found in the given province, district, sector and cell.
-It returns `undefined` if either province, district , sector or cell is not found.
+  if province, district, sector and cell are given it returns an array of Villages found from the given cell.
+  It returns `undefined` if either province, district , sector or cell is not found.
 
 ## Install
 
