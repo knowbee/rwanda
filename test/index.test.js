@@ -1,30 +1,26 @@
 const {
   Provinces,
   Districts,
-  District,
   Sectors,
-  Sector,
   Cells,
-  Cell,
   Villages,
-  Village
 } = require("../index.js");
 const chai = require("chai");
 const expect = chai.expect;
 
 describe("Rwanda", async () => {
   describe("getting provinces", () => {
-    it("should return array of provinces", function() {
+    it("should return array of provinces", function () {
       const provinces = Provinces();
       expect(provinces).to.deep.equal([
         "East",
         "Kigali",
         "North",
         "South",
-        "West"
+        "West",
       ]);
     });
-    it("should return length of provinces equal to 5", function() {
+    it("should return length of provinces equal to 5", function () {
       const provinces = Provinces();
       const length = provinces.length;
       expect(length).to.equal(5);
@@ -32,7 +28,7 @@ describe("Rwanda", async () => {
   });
 
   describe("getting districts", () => {
-    it("should return array of districts", function() {
+    it("should return array of districts", function () {
       const districts = Districts();
       expect(districts).to.deep.equal([
         "Bugesera",
@@ -64,14 +60,14 @@ describe("Rwanda", async () => {
         "Nyamasheke",
         "Rubavu",
         "Rutsiro",
-        "Rusizi"
+        "Rusizi",
       ]);
     });
-    it("should return array of districts of a province", function() {
-      const districts = District("Kigali");
+    it("should return array of districts of a province", function () {
+      const districts = Districts("Kigali");
       expect(typeof districts).to.equal("object");
     });
-    it("should return length of districts equal to 30", function() {
+    it("should return length of districts equal to 30", function () {
       const districts = Districts();
       const length = districts.length;
       expect(length).to.equal(30);
@@ -79,60 +75,60 @@ describe("Rwanda", async () => {
   });
 
   describe("getting sectors", () => {
-    it("should return length of sectors equal to 416", function() {
+    it("should return length of sectors equal to 416", function () {
       const sectors = Sectors();
       const length = sectors.length;
       expect(length).to.equal(416);
       expect(typeof sectors).to.equal("object");
     });
-    it("should return array of sectors of a district", function() {
-      const sectors = Sector("South", "Huye");
+    it("should return array of sectors of a district", function () {
+      const sectors = Sectors("South", "Huye");
       expect(typeof sectors).to.equal("object");
     });
-    it("should return undefined", function() {
-      const sectors = Sector("South");
+    it("should return undefined", function () {
+      const sectors = Sectors("South");
       expect(sectors).to.equal(undefined);
     });
   });
   describe("getting cells", () => {
-    it("should return length of cells equal to 2149", function() {
+    it("should return length of cells equal to 2149", function () {
       const cells = Cells();
       const length = cells.length;
       expect(length).to.equal(2149);
       expect(typeof cells).to.equal("object");
     });
-    it("should return array of cells of a sector", function() {
-      const cells = Cell("South", "Huye", "Tumba");
+    it("should return array of cells of a sector", function () {
+      const cells = Cells("South", "Huye", "Tumba");
       const type = typeof cells;
       expect(type).to.equal("object");
     });
-    it("should return undefined", function() {
-      const cells = Cell("South", "Huye");
+    it("should return undefined", function () {
+      const cells = Cells("South", "Huye");
       expect(cells).to.equal(undefined);
     });
   });
 
   describe("getting villages", () => {
-    it("should return length of villages equal to 14837", function() {
+    it("should return length of villages equal to 14837", function () {
       const villages = Villages();
       const length = villages.length;
       expect(length).to.equal(14837);
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function() {
-      const villages = Village("South", "Huye", "Tumba", "Cyarwa");
+    it("should return array of villages of a cell", function () {
+      const villages = Villages("South", "Huye", "Tumba", "Cyarwa");
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function() {
-      const villages = Village("Kigali", "Gasabo", "Remera", "Rukiri I");
+    it("should return array of villages of a cell", function () {
+      const villages = Villages("Kigali", "Gasabo", "Remera", "Rukiri I");
       expect(typeof villages).to.equal("object");
     });
-    it("should return undefined when there is a typo", function() {
-      const villages = Village("Kigali", "Gasabo", "Remera", "RukiriI");
+    it("should return undefined when there is a typo", function () {
+      const villages = Villages("Kigali", "Gasabo", "Remera", "RukiriI");
       expect(villages).to.equal(undefined);
     });
-    it("should return undefined when incomplete", function() {
-      const villages = Village("South", "Huye", "Tumba");
+    it("should return undefined when incomplete", function () {
+      const villages = Villages("South", "Huye", "Tumba");
       expect(villages).to.equal(undefined);
     });
   });
