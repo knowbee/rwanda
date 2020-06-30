@@ -1,16 +1,7 @@
 const datafile = require("./data/provinces");
 
 const formatInput = (name) => {
-  if (name && name.includes(" ")) {
-    newName = name.split(" ");
-    return `${newName[0].charAt(0).toUpperCase()}${newName[0]
-      .substring(1)
-      .toLowerCase()} ${newName[1]}`;
-  } else {
-    return name && name.length > 2
-      ? `${name.charAt(0).toUpperCase()}${name.substring(1).toLowerCase()}`
-      : undefined;
-  }
+  return name.replace(/^./, name[0].toUpperCase());
 };
 /**
  * Provinces: it returns all provinces found in Rwanda
