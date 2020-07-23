@@ -4,18 +4,20 @@ const formatInput = (name) => {
   return name.replace(/^./, name[0].toUpperCase());
 };
 /**
- * Provinces: it returns all provinces found in Rwanda
  * @returns {array} province
+ * @example
+ * Provinces(); // => [] of all provinces found in Rwanda
  */
 exports.Provinces = () => {
   return Object.keys(datafile);
 };
 
 /**
- * Districts: if no params are given it returns all districts from Rwanda
- * otherwise it returns all districts from the given place (province)
  * @param {string} [province]
  * @returns {array} districts
+ * @example
+ * Districts("Kigali"); // => [] of all districts found in Kigali
+ * Districts(); // => [] of all districts found in Rwanda
  */
 exports.Districts = (province) => {
   if (province) {
@@ -34,11 +36,12 @@ exports.Districts = (province) => {
 };
 
 /**
- * Sectors: if no params are given it returns all sectors from Rwanda
- * otherwise it returns all sectors from the given place (province, district)
  * @param {string} [province]
  * @param {string} [district]
  * @returns {array} sectors
+ * @example
+ * Sectors("Kigali","Kicukiro"); // => [] of all sectors found in Kicukiro district
+ * Sectors(); // => [] of all sectors found in Rwanda
  */
 exports.Sectors = (province, district) => {
   if (province && district) {
@@ -58,12 +61,13 @@ exports.Sectors = (province, district) => {
   return undefined;
 };
 /**
- * Cells: if no params are given it returns all cells from Rwanda
- * otherwise it returns all cells from the given place (province, district, sector)
  * @param {string} [province]
  * @param {string} [district]
  * @param {string} [sector]
  * @returns {array} cells
+ * @example
+ * Cells("South", "Huye", "Tumba"); // => [] of all cells found in Tumba sector
+ * Cells(); // => [] of all cells found in Rwanda
  */
 exports.Cells = (province, district, sector) => {
   if (province && district && sector) {
@@ -92,13 +96,14 @@ exports.Cells = (province, district, sector) => {
   return undefined;
 };
 /**
- * Villages: if no params are given it returns all villages from Rwanda
- * otherwise it returns all villages from the given place (provice, district, sector, cell)
  * @param {string} [province]
  * @param {string} [district]
  * @param {string} [sector]
  * @param {string} [cell]
  * @returns {array} villages
+ * @example
+ * Villages("South", "Huye", "Tumba", "Cyarwa"); // => [] of all villages found in Cyarwa cell
+ * Villages(); // => [] of all villages found in Rwanda
  */
 exports.Villages = (province, district, sector, cell) => {
   if (province && district && sector && cell) {
