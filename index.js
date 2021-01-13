@@ -1,4 +1,4 @@
-const datafile = require("./data/provinces");
+const datafile = require('./data/provinces');
 
 const formatInput = (name) => {
   return name.replace(/^./, name[0].toUpperCase());
@@ -44,8 +44,10 @@ exports.Districts = (province) => {
  * Sectors(); // => [] of all sectors found in Rwanda
  */
 exports.Sectors = (province, district) => {
-  if (province && district) {
-    return Object.keys(datafile[formatInput(province)][formatInput(district)]);
+  if (province && district && datafile[formatInput(province)]) {
+    return Object.keys(
+      datafile[formatInput(province)][formatInput(district)] || []
+    );
   }
   if (!province && !district) {
     const sectors = [];
@@ -70,11 +72,17 @@ exports.Sectors = (province, district) => {
  * Cells(); // => [] of all cells found in Rwanda
  */
 exports.Cells = (province, district, sector) => {
-  if (province && district && sector) {
+  if (
+    province &&
+    district &&
+    sector &&
+    datafile[formatInput(province)] &&
+    datafile[formatInput(province)][formatInput(district)]
+  ) {
     return Object.keys(
       datafile[formatInput(province)][formatInput(district)][
         formatInput(sector)
-      ]
+      ] || []
     );
   }
   if (!province && !district && !sector) {
@@ -106,10 +114,25 @@ exports.Cells = (province, district, sector) => {
  * Villages(); // => [] of all villages found in Rwanda
  */
 exports.Villages = (province, district, sector, cell) => {
-  if (province && district && sector && cell) {
-    return datafile[formatInput(province)][formatInput(district)][
+  if (
+    province &&
+    district &&
+    sector &&
+    cell &&
+    datafile[formatInput(province)] &&
+    datafile[formatInput(province)][formatInput(district)] &&
+    datafile[formatInput(province)][formatInput(district)][
       formatInput(sector)
-    ][formatInput(cell)];
+    ] &&
+    datafile[formatInput(province)][formatInput(district)][formatInput(sector)][
+      formatInput(cell)
+    ]
+  ) {
+    return (
+      datafile[formatInput(province)][formatInput(district)][
+        formatInput(sector)
+      ][formatInput(cell)] || []
+    );
   }
   if (!province && !district && !sector && !cell) {
     const villages = [];
