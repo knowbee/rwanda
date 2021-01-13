@@ -165,7 +165,6 @@ describe('Rwanda', async () => {
     });
     it('should not break on non  existing cell', () => {
       const villages = Villages('South', 'Huye', 'Tumba', 'lkjalkdjf');
-      console.log(villages, '>>>>>>>>>>>>>>>>>>>>>');
       expect(villages).to.be.undefined;
     });
   });
