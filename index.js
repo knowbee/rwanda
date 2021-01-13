@@ -1,4 +1,4 @@
-const datafile = require('./data/provinces');
+const datafile = require("./data/provinces");
 
 const formatInput = (name) => {
   return name.replace(/^./, name[0].toUpperCase());
@@ -45,9 +45,11 @@ exports.Districts = (province) => {
  */
 exports.Sectors = (province, district) => {
   if (province && district && datafile[formatInput(province)]) {
-    return Object.keys(
-      datafile[formatInput(province)][formatInput(district)] || []
-    );
+    const sectors = datafile[formatInput(province)][formatInput(district)];
+    if (!sectors) {
+      throw Error("Given data was invalid");
+    }
+    return Object.keys(sectors);
   }
   if (!province && !district) {
     const sectors = [];
@@ -79,11 +81,14 @@ exports.Cells = (province, district, sector) => {
     datafile[formatInput(province)] &&
     datafile[formatInput(province)][formatInput(district)]
   ) {
-    return Object.keys(
+    const cells =
       datafile[formatInput(province)][formatInput(district)][
         formatInput(sector)
-      ] || []
-    );
+      ];
+    if (!cells) {
+      throw Error("Given data was invalid");
+    }
+    return Object.keys(cells);
   }
   if (!province && !district && !sector) {
     const cells = [];
@@ -128,11 +133,9 @@ exports.Villages = (province, district, sector, cell) => {
       formatInput(cell)
     ]
   ) {
-    return (
-      datafile[formatInput(province)][formatInput(district)][
-        formatInput(sector)
-      ][formatInput(cell)] || []
-    );
+    return datafile[formatInput(province)][formatInput(district)][
+      formatInput(sector)
+    ][formatInput(cell)];
   }
   if (!province && !district && !sector && !cell) {
     const villages = [];
