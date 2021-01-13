@@ -44,8 +44,12 @@ exports.Districts = (province) => {
  * Sectors(); // => [] of all sectors found in Rwanda
  */
 exports.Sectors = (province, district) => {
-  if (province && district) {
-    return Object.keys(datafile[formatInput(province)][formatInput(district)]);
+  if (province && district && datafile[formatInput(province)]) {
+    const sectors = datafile[formatInput(province)][formatInput(district)];
+    if (!sectors) {
+      throw Error("Given data was invalid");
+    }
+    return Object.keys(sectors);
   }
   if (!province && !district) {
     const sectors = [];
@@ -70,12 +74,21 @@ exports.Sectors = (province, district) => {
  * Cells(); // => [] of all cells found in Rwanda
  */
 exports.Cells = (province, district, sector) => {
-  if (province && district && sector) {
-    return Object.keys(
+  if (
+    province &&
+    district &&
+    sector &&
+    datafile[formatInput(province)] &&
+    datafile[formatInput(province)][formatInput(district)]
+  ) {
+    const cells =
       datafile[formatInput(province)][formatInput(district)][
         formatInput(sector)
-      ]
-    );
+      ];
+    if (!cells) {
+      throw Error("Given data was invalid");
+    }
+    return Object.keys(cells);
   }
   if (!province && !district && !sector) {
     const cells = [];
@@ -106,7 +119,20 @@ exports.Cells = (province, district, sector) => {
  * Villages(); // => [] of all villages found in Rwanda
  */
 exports.Villages = (province, district, sector, cell) => {
-  if (province && district && sector && cell) {
+  if (
+    province &&
+    district &&
+    sector &&
+    cell &&
+    datafile[formatInput(province)] &&
+    datafile[formatInput(province)][formatInput(district)] &&
+    datafile[formatInput(province)][formatInput(district)][
+      formatInput(sector)
+    ] &&
+    datafile[formatInput(province)][formatInput(district)][formatInput(sector)][
+      formatInput(cell)
+    ]
+  ) {
     return datafile[formatInput(province)][formatInput(district)][
       formatInput(sector)
     ][formatInput(cell)];

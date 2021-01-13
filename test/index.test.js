@@ -85,6 +85,17 @@ describe("Rwanda", async () => {
       const sectors = Sectors("South", "Huye");
       expect(typeof sectors).to.equal("object");
     });
+    it("should not break on non existing province", () => {
+      const sectors = Sectors("ljlkjadf", "Huye");
+      expect(sectors).to.be.undefined;
+    });
+    it("should not break on non existing district", () => {
+      try {
+        Sectors("South", "ljlkajdlfk");
+      } catch (error) {
+        expect(error.message).to.equal("Given data was invalid");
+      }
+    });
     it("should return undefined", function () {
       const sectors = Sectors("South");
       expect(sectors).to.equal(undefined);
@@ -105,6 +116,21 @@ describe("Rwanda", async () => {
     it("should return undefined", function () {
       const cells = Cells("South", "Huye");
       expect(cells).to.equal(undefined);
+    });
+    it("should not break on non existing province", () => {
+      const cells = Cells("ljakljfkj", "Huye", "Tumba");
+      expect(cells).to.be.undefined;
+    });
+    it("should not break on non existing district", () => {
+      const cells = Cells("South", "Kigali", "Tumba");
+      expect(cells).to.be.undefined;
+    });
+    it("should return empty array on non existing sector", () => {
+      try {
+        Cells("South", "Huye", "Tumbaad");
+      } catch (error) {
+        expect(error.message).to.equal("Given data was invalid");
+      }
     });
   });
 
@@ -130,6 +156,22 @@ describe("Rwanda", async () => {
     it("should return undefined when incomplete", function () {
       const villages = Villages("South", "Huye", "Tumba");
       expect(villages).to.equal(undefined);
+    });
+    it("should not break on non existing province", () => {
+      const villages = Villages("ljakljfkj", "Huye", "Tumba", "Rukiri I");
+      expect(villages).to.be.undefined;
+    });
+    it("should not break on non existing district", () => {
+      const villages = Villages("South", "Kigali", "Tumba", "Rukiri I");
+      expect(villages).to.be.undefined;
+    });
+    it("should not break non existing sector", () => {
+      const villages = Villages("South", "Huye", "Tumbaad", "Rukiri I");
+      expect(villages).to.be.undefined;
+    });
+    it("should not break on non  existing cell", () => {
+      const villages = Villages("South", "Huye", "Tumba", "lkjalkdjf");
+      expect(villages).to.be.undefined;
     });
   });
 });
