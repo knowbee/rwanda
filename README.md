@@ -105,9 +105,8 @@ yarn add rwanda
 
 # Contributors
 
-| [<img src="https://github.com/oesukam.png" width="100px;"><br><sub><b>Olivier Esuka</b></sub>](https://github.com/oesukam) | [<img src="https://github.com/knowbee.png" width="100px;"><br><sub><b>Igwaneza Bruce</b></sub>](https://github.com/knowbee) |
-| :------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
-
+| [<img src="https://github.com/abayo-luc.png" width="100px;"><br><sub><b>Abayo Luc</b></sub>](https://github.com/abayo-luc) | [<img src="https://github.com/oesukam.png" width="100px;"><br><sub><b>Olivier Esuka</b></sub>](https://github.com/oesukam) | [<img src="https://github.com/knowbee.png" width="100px;"><br><sub><b>Igwaneza Bruce</b></sub>](https://github.com/knowbee) |
+| :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------- |
 
 # Contribution
 
