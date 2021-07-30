@@ -174,4 +174,51 @@ describe("Rwanda", async () => {
       expect(villages).to.be.undefined;
     });
   });
+
+  describe("case sensitivity", () => {
+    it("should return villages of nyAKaBAnDA iI", () => {
+      const villages = Villages(
+        "kIGali",
+        "nYaruGenGE",
+        "NYAKABANDA",
+        "nyAKaBAnDA iI"
+      );
+      expect(villages).to.deep.equal([
+        "Ibuhoro",
+        "Kabeza",
+        "Kanyiranganji",
+        "Karujongi",
+        "Kigarama",
+        "Kirwa",
+      ]);
+    });
+
+    it("should return villages of raNgO a", () => {
+      const villages = Villages("sOutH", "hUYE", "muKURA", "raNgO a");
+      expect(villages).to.deep.equal([
+        "Agakera",
+        "Agakombe",
+        "Gaseke",
+        "Kabahora",
+        "Mpaza",
+        "Nyamata",
+        "Rwinuma",
+      ]);
+    });
+
+    it("should return villages of Nyamata y' Umujyi", () => {
+      const villages = Villages(
+        "east",
+        "buGEseRA",
+        "nyamAta",
+        "Nyamata y' Umujyi"
+      );
+      expect(villages).to.have.lengthOf(13);
+    });
+
+    it("should not break with undefined cell", () => {
+      const villages = Villages("east", "buGEseRA", "nyamAta", "");
+      expect(villages).to.be.undefined;
+    });
+  });
 });
