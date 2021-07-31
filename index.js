@@ -1,8 +1,38 @@
 const datafile = require("./data/provinces");
 
-const formatInput = (name) => {
-  return name.replace(/^./, name[0].toUpperCase());
+/**
+ * @param {string}
+ * @returns {string} Capitalized string
+ * @example
+ * 'kiGALi'; // => Kigali
+ */
+const capitalize = (word) => {
+  return word.toLowerCase().replace(/^./, word[0].toUpperCase());
 };
+
+/**
+ * @param {string}
+ * @returns {string} normalized input
+ * @example
+ * 'kiGALi'; // => Kigali
+ * 'RANGO a'; // => Rango A
+ */
+const formatInput = (name) => {
+  let input = name;
+  if (name) {
+    const wordsInName = name.split(" ");
+    if (wordsInName.length === 2) {
+      const firstWord = capitalize(wordsInName[0]);
+      const secondWord = wordsInName[1].toUpperCase();
+      input = firstWord + " " + secondWord;
+    } else if (wordsInName.length === 1) {
+      input = capitalize(name);
+    }
+  }
+
+  return input;
+};
+
 /**
  * @returns {array} province
  * @example
