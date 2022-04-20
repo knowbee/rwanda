@@ -1,3 +1,4 @@
+const chai = require("chai");
 const {
   Provinces,
   Districts,
@@ -5,7 +6,7 @@ const {
   Cells,
   Villages,
 } = require("../index.js");
-const chai = require("chai");
+
 const expect = chai.expect;
 
 describe("Rwanda", async () => {
@@ -66,6 +67,15 @@ describe("Rwanda", async () => {
     it("should return array of districts of a province", function () {
       const districts = Districts("Kigali");
       expect(typeof districts).to.equal("object");
+    });
+    it("should return array of districts of two provinces", function () {
+      const districts = Districts(["Kigali", "North"]);
+      const kigaliDistricts = Districts(["Kigali"]);
+      const northDistricts = Districts(["North"]);
+
+      expect(typeof districts).to.equal("object");
+      expect(districts.includes(kigaliDistricts[0])).to.equal(true);
+      expect(districts.includes(northDistricts[0])).to.equal(true);
     });
     it("should return length of districts equal to 30", function () {
       const districts = Districts();
