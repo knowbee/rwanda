@@ -17,7 +17,7 @@ Rwanda is organized in four provinces in addition to the Kigali city, 30 Distric
 ## Example
 
 ```js
-const { Provinces, Districts } = require("rwanda");
+const { Provinces, Districts } = require('rwanda');
 
 console.log(Provinces()); // [ 'East', 'Kigali', 'North', 'South', 'West' ]
 console.log(Districts()); // [ 'Bugesera', 'Gatsibo', 'Kayonza', 'Kirehe',...]
@@ -26,9 +26,9 @@ console.log(Districts()); // [ 'Bugesera', 'Gatsibo', 'Kayonza', 'Kirehe',...]
 And how to get districts of a given province
 
 ```js
-const { Districts } = require("rwanda");
+const { Districts } = require('rwanda');
 
-console.log(Districts("kigali")); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
+console.log(Districts('kigali')); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
 ```
 
 ## Methods
@@ -42,7 +42,7 @@ console.log(Districts("kigali")); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
 ## Usage
 
 ```js
-const { Provinces, Districts, Sectors, Cells, Villages } = require("rwanda");
+const { Provinces, Districts, Sectors, Cells, Villages } = require('rwanda');
 ```
 
 All inputs are case-insensitive.
@@ -52,7 +52,7 @@ All inputs are case-insensitive.
 Returns array of country provinces.
 
 ```js
-["East", "Kigali", "North", "South", "West"];
+['East', 'Kigali', 'North', 'South', 'West'];
 ```
 
 ### Districts()
@@ -105,8 +105,24 @@ yarn add rwanda
 
 # Contributors
 
-| [<img src="https://github.com/abayo-luc.png" width="100px;"><br><sub><b>Abayo Luc</b></sub>](https://github.com/abayo-luc) | [<img src="https://github.com/oesukam.png" width="100px;"><br><sub><b>Olivier Esuka</b></sub>](https://github.com/oesukam) | [<img src="https://github.com/knowbee.png" width="100px;"><br><sub><b>Igwaneza Bruce</b></sub>](https://github.com/knowbee) |
-| :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------- |
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Karlmusingo"><img 
+    style="border-radius:50%"
+    src="https://github.com/Karlmusingo.png" width="100px;" alt="Karl MUSINGO"/><br /><sub><b>
+Karl MUSINGO</b></sub></td>
+    <td align="center"><a href="https://github.com/YvesIraguha"><img 
+    style="border-radius:50%" src="https://github.com/YvesIraguha.png" width="100px;" alt="Yves Iraguha<"/><br /><sub><b>Yves Iraguha</b></sub></td>
+    <td align="center"><a href="https://github.com/abayo-luc"><img 
+    style="border-radius:50%" src="https://github.com/abayo-luc.png" width="100px;" alt="Abayo Luc"/><br /><sub><b>Abayo Luc</b></sub></td>
+    <td align="center"><a href="https://github.com/oesukam"><img
+    style="border-radius:50%" src="https://github.com/oesukam.png" width="100px;" alt="Olivier Esuka"/><br /><sub><b>Olivier Esuka</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/knowbee"><img
+    style="border-radius:50%" src="https://github.com/knowbee.png" width="100px;" alt="Igwaneza Bruce"/><br /><sub><b>Igwaneza Bruce</b></sub></td>
+  </tr>
+</table>
 
 # Contribution
 
