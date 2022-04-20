@@ -43,17 +43,29 @@ exports.Provinces = () => {
 };
 
 /**
- * @param {string} [province]
+ * @param {string|array} [provinces]
  * @returns {array} districts
  * @example
  * Districts("Kigali"); // => [] of all districts found in Kigali
+ * Districts(["Kigali", "North"]); // => [] of all districts found in Kigali and North provinces
  * Districts(); // => [] of all districts found in Rwanda
  */
-exports.Districts = (province) => {
-  if (province) {
-    return Object.keys(datafile[formatInput(province)]);
+exports.Districts = (provinces) => {
+  if (Array.isArray(provinces)) {
+    const districts = [];
+    for (const province of provinces) {
+      if (datafile[formatInput(province)]) {
+        districts.push(...Object.keys(datafile[formatInput(province)]));
+      }
+    }
+    return districts;
   }
-  if (!province) {
+
+  if (provinces) {
+    return Object.keys(datafile[formatInput(provinces)]);
+  }
+
+  if (!provinces) {
     const districts = [];
     for (const province of Object.keys(datafile)) {
       for (const district of Object.keys(datafile[province])) {
