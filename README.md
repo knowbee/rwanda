@@ -29,6 +29,7 @@ And how to get districts of a given province
 const { Districts } = require('rwanda');
 
 console.log(Districts('kigali')); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
+console.log(Districts('Kigali', 'South')); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge', 'Huye',.... ]
 ```
 
 ## Methods
