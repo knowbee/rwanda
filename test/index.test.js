@@ -4,7 +4,7 @@ const {
   Districts,
   Sectors,
   Cells,
-  Villages,
+  Villages
 } = require("../index.js");
 
 const expect = chai.expect;
@@ -18,7 +18,7 @@ describe("Rwanda", async () => {
         "Kigali",
         "North",
         "South",
-        "West",
+        "West"
       ]);
     });
     it("should return length of provinces equal to 5", function () {
@@ -61,7 +61,7 @@ describe("Rwanda", async () => {
         "Nyamasheke",
         "Rubavu",
         "Rutsiro",
-        "Rusizi",
+        "Rusizi"
       ]);
     });
     it("should return array of districts of a province", function () {
@@ -199,7 +199,7 @@ describe("Rwanda", async () => {
         "Kanyiranganji",
         "Karujongi",
         "Kigarama",
-        "Kirwa",
+        "Kirwa"
       ]);
     });
 
@@ -212,7 +212,7 @@ describe("Rwanda", async () => {
         "Kabahora",
         "Mpaza",
         "Nyamata",
-        "Rwinuma",
+        "Rwinuma"
       ]);
     });
 
