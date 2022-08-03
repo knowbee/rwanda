@@ -2,7 +2,8 @@ name: CI/CD
 
 on:
   pull_request:
-
+  push:
+  
 jobs:
   audit:
     name: audit
