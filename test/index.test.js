@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 const chai = require("chai");
 const {
   Provinces,
@@ -159,7 +160,7 @@ describe("Rwanda", function () {
       expect(length).to.equal(14837);
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function () {
+    it("should return array of villages in Cyarwa", function () {
       const villages = Villages(
         "South",
         "Huye",
@@ -168,7 +169,7 @@ describe("Rwanda", function () {
       );
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function () {
+    it("should return array of villages in Rukiri I cell", function () {
       const villages = Villages(
         "Kigali",
         "Gasabo",

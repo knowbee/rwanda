@@ -95,9 +95,9 @@ exports.Sectors = (province, district) => {
   }
   if (!province && !district) {
     const sectors = [];
-    for (const province of Object.keys(datafile)) {
-      for (const district of Object.keys(datafile[province])) {
-        for (const sector of Object.keys(datafile[province][district])) {
+    for (const datafileProvince of Object.keys(datafile)) {
+      for (const datafileDistrict of Object.keys(datafile[datafileProvince])) {
+        for (const sector of Object.keys(datafile[datafileProvince][datafileDistrict])) {
           sectors.push(sector);
         }
       }
@@ -134,11 +134,11 @@ exports.Cells = (province, district, sector) => {
   }
   if (!province && !district && !sector) {
     const cells = [];
-    for (const province of Object.keys(datafile)) {
-      for (const district of Object.keys(datafile[province])) {
-        for (const sector of Object.keys(datafile[province][district])) {
+    for (const datafileProvince of Object.keys(datafile)) {
+      for (const datafileDistrict of Object.keys(datafile[datafileProvince])) {
+        for (const datafileSector of Object.keys(datafile[datafileProvince][datafileDistrict])) {
           for (const cell of Object.keys(
-            datafile[province][district][sector]
+            datafile[datafileProvince][datafileDistrict][datafileSector]
           )) {
             cells.push(cell);
           }
@@ -181,17 +181,17 @@ exports.Villages = (province, district, sector, cell) => {
   }
   if (!province && !district && !sector && !cell) {
     const villages = [];
-    for (const province of Object.keys(datafile)) {
-      for (const district of Object.keys(datafile[province])) {
-        for (const sector of Object.keys(datafile[province][district])) {
-          for (const cell of Object.keys(
-            datafile[province][district][sector]
+    for (const datafileProvince of Object.keys(datafile)) {
+      for (const datafileDistrict of Object.keys(datafile[datafileProvince])) {
+        for (const datafileSector of Object.keys(datafile[datafileProvince][datafileDistrict])) {
+          for (const datafileCell of Object.keys(
+            datafile[datafileProvince][datafileDistrict][datafileSector]
           )) {
             for (const village of Object.keys(
-              datafile[province][district][sector][cell]
+              datafile[datafileProvince][datafileDistrict][datafileSector][datafileCell]
             )) {
               villages.push(
-                datafile[province][district][sector][cell][village]
+                datafile[datafileProvince][datafileDistrict][datafileSector][datafileCell][village]
               );
             }
           }
