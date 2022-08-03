@@ -1,5 +1,6 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "plugin:mocha/recommended"],
+  "plugins": ["mocha"],
   "env": {
     "node": true
   },
@@ -36,6 +37,8 @@
     "no-useless-escape": 2,
     "vars-on-top": 0,
     "prefer-arrow-callback": 0,
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "mocha/no-skipped-tests": "error",
+    "mocha/no-exclusive-tests": "error"
   }
 }
