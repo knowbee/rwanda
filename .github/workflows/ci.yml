@@ -1,12 +1,8 @@
 name: CI/CD 
 
 on:
-  push:
-    - develop
-    - master
   pull_request:
-    - develop
-    - master
+
 jobs:
   audit:
     name: audit
