@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-expressions */
 const chai = require("chai");
 const {
   Provinces,
   Districts,
   Sectors,
   Cells,
-  Villages,
-} = require("../index.js");
+  Villages
+} = require("../index");
 
 const expect = chai.expect;
 
-describe("Rwanda", async () => {
-  describe("getting provinces", () => {
+describe("Rwanda", function () {
+  describe("getting provinces", function () {
     it("should return array of provinces", function () {
       const provinces = Provinces();
       expect(provinces).to.deep.equal([
@@ -18,7 +19,7 @@ describe("Rwanda", async () => {
         "Kigali",
         "North",
         "South",
-        "West",
+        "West"
       ]);
     });
     it("should return length of provinces equal to 5", function () {
@@ -28,7 +29,7 @@ describe("Rwanda", async () => {
     });
   });
 
-  describe("getting districts", () => {
+  describe("getting districts", function () {
     it("should return array of districts", function () {
       const districts = Districts();
       expect(districts).to.deep.equal([
@@ -61,7 +62,7 @@ describe("Rwanda", async () => {
         "Nyamasheke",
         "Rubavu",
         "Rutsiro",
-        "Rusizi",
+        "Rusizi"
       ]);
     });
     it("should return array of districts of a province", function () {
@@ -74,8 +75,12 @@ describe("Rwanda", async () => {
       const northDistricts = Districts(["North"]);
 
       expect(typeof districts).to.equal("object");
-      expect(districts.includes(kigaliDistricts[0])).to.equal(true);
-      expect(districts.includes(northDistricts[0])).to.equal(true);
+      expect(
+        districts.includes(kigaliDistricts[0])
+      ).to.equal(true);
+      expect(
+        districts.includes(northDistricts[0])
+      ).to.equal(true);
     });
     it("should return length of districts equal to 30", function () {
       const districts = Districts();
@@ -84,7 +89,7 @@ describe("Rwanda", async () => {
     });
   });
 
-  describe("getting sectors", () => {
+  describe("getting sectors", function () {
     it("should return length of sectors equal to 416", function () {
       const sectors = Sectors();
       const length = sectors.length;
@@ -95,15 +100,17 @@ describe("Rwanda", async () => {
       const sectors = Sectors("South", "Huye");
       expect(typeof sectors).to.equal("object");
     });
-    it("should not break on non existing province", () => {
+    it("should not break on non existing province", function () {
       const sectors = Sectors("ljlkjadf", "Huye");
       expect(sectors).to.be.undefined;
     });
-    it("should not break on non existing district", () => {
+    it("should not break on non existing district", function () {
       try {
         Sectors("South", "ljlkajdlfk");
       } catch (error) {
-        expect(error.message).to.equal("Given data was invalid");
+        expect(error.message).to.equal(
+          "Given data was invalid"
+        );
       }
     });
     it("should return undefined", function () {
@@ -111,7 +118,7 @@ describe("Rwanda", async () => {
       expect(sectors).to.equal(undefined);
     });
   });
-  describe("getting cells", () => {
+  describe("getting cells", function () {
     it("should return length of cells equal to 2149", function () {
       const cells = Cells();
       const length = cells.length;
@@ -127,66 +134,103 @@ describe("Rwanda", async () => {
       const cells = Cells("South", "Huye");
       expect(cells).to.equal(undefined);
     });
-    it("should not break on non existing province", () => {
+    it("should not break on non existing province", function () {
       const cells = Cells("ljakljfkj", "Huye", "Tumba");
       expect(cells).to.be.undefined;
     });
-    it("should not break on non existing district", () => {
+    it("should not break on non existing district", function () {
       const cells = Cells("South", "Kigali", "Tumba");
       expect(cells).to.be.undefined;
     });
-    it("should return empty array on non existing sector", () => {
+    it("should return empty array on non existing sector", function () {
       try {
         Cells("South", "Huye", "Tumbaad");
       } catch (error) {
-        expect(error.message).to.equal("Given data was invalid");
+        expect(error.message).to.equal(
+          "Given data was invalid"
+        );
       }
     });
   });
 
-  describe("getting villages", () => {
+  describe("getting villages", function () {
     it("should return length of villages equal to 14837", function () {
       const villages = Villages();
       const length = villages.length;
       expect(length).to.equal(14837);
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function () {
-      const villages = Villages("South", "Huye", "Tumba", "Cyarwa");
+    it("should return array of villages in Cyarwa", function () {
+      const villages = Villages(
+        "South",
+        "Huye",
+        "Tumba",
+        "Cyarwa"
+      );
       expect(typeof villages).to.equal("object");
     });
-    it("should return array of villages of a cell", function () {
-      const villages = Villages("Kigali", "Gasabo", "Remera", "Rukiri I");
+    it("should return array of villages in Rukiri I cell", function () {
+      const villages = Villages(
+        "Kigali",
+        "Gasabo",
+        "Remera",
+        "Rukiri I"
+      );
       expect(typeof villages).to.equal("object");
     });
     it("should return undefined when there is a typo", function () {
-      const villages = Villages("Kigali", "Gasabo", "Remera", "RukiriI");
+      const villages = Villages(
+        "Kigali",
+        "Gasabo",
+        "Remera",
+        "RukiriI"
+      );
       expect(villages).to.equal(undefined);
     });
     it("should return undefined when incomplete", function () {
       const villages = Villages("South", "Huye", "Tumba");
       expect(villages).to.equal(undefined);
     });
-    it("should not break on non existing province", () => {
-      const villages = Villages("ljakljfkj", "Huye", "Tumba", "Rukiri I");
+    it("should not break on non existing province", function () {
+      const villages = Villages(
+        "ljakljfkj",
+        "Huye",
+        "Tumba",
+        "Rukiri I"
+      );
       expect(villages).to.be.undefined;
     });
-    it("should not break on non existing district", () => {
-      const villages = Villages("South", "Kigali", "Tumba", "Rukiri I");
+    it("should not break on non existing district", function () {
+      const villages = Villages(
+        "South",
+        "Kigali",
+        "Tumba",
+        "Rukiri I"
+      );
       expect(villages).to.be.undefined;
     });
-    it("should not break non existing sector", () => {
-      const villages = Villages("South", "Huye", "Tumbaad", "Rukiri I");
+    it("should not break non existing sector", function () {
+      const villages = Villages(
+        "South",
+        "Huye",
+        "Tumbaad",
+        "Rukiri I"
+      );
       expect(villages).to.be.undefined;
     });
-    it("should not break on non  existing cell", () => {
-      const villages = Villages("South", "Huye", "Tumba", "lkjalkdjf");
+    it("should not break on non  existing cell", function () {
+      const villages = Villages(
+        "South",
+        "Huye",
+        "Tumba",
+        "lkjalkdjf"
+      );
       expect(villages).to.be.undefined;
     });
   });
 
-  describe("case sensitivity", () => {
-    it("should return villages of nyAKaBAnDA iI", () => {
+  describe("case sensitivity", function () {
+    it("should return villages of nyAKaBAnDA iI", function () {
       const villages = Villages(
         "kIGali",
         "nYaruGenGE",
@@ -199,12 +243,17 @@ describe("Rwanda", async () => {
         "Kanyiranganji",
         "Karujongi",
         "Kigarama",
-        "Kirwa",
+        "Kirwa"
       ]);
     });
 
-    it("should return villages of raNgO a", () => {
-      const villages = Villages("sOutH", "hUYE", "muKURA", "raNgO a");
+    it("should return villages of raNgO a", function () {
+      const villages = Villages(
+        "sOutH",
+        "hUYE",
+        "muKURA",
+        "raNgO a"
+      );
       expect(villages).to.deep.equal([
         "Agakera",
         "Agakombe",
@@ -212,11 +261,11 @@ describe("Rwanda", async () => {
         "Kabahora",
         "Mpaza",
         "Nyamata",
-        "Rwinuma",
+        "Rwinuma"
       ]);
     });
 
-    it("should return villages of Nyamata y' Umujyi", () => {
+    it("should return villages of Nyamata y' Umujyi", function () {
       const villages = Villages(
         "east",
         "buGEseRA",
@@ -226,8 +275,13 @@ describe("Rwanda", async () => {
       expect(villages).to.have.lengthOf(13);
     });
 
-    it("should not break with undefined cell", () => {
-      const villages = Villages("east", "buGEseRA", "nyamAta", "");
+    it("should not break with undefined cell", function () {
+      const villages = Villages(
+        "east",
+        "buGEseRA",
+        "nyamAta",
+        ""
+      );
       expect(villages).to.be.undefined;
     });
   });

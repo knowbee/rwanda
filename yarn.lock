@@ -857,6 +857,14 @@ eslint-plugin-import@^2.26.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
+eslint-plugin-mocha@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-10.1.0.tgz#69325414f875be87fb2cb00b2ef33168d4eb7c8d"
+  integrity sha512-xLqqWUF17llsogVOC+8C6/jvQ+4IoOREbN7ZCHuOHuD6cT5cDD4h7f2LgsZuzMAiwswWE21tO7ExaknHVDrSkw==
+  dependencies:
+    eslint-utils "^3.0.0"
+    rambda "^7.1.0"
+
 eslint-scope@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.1.1.tgz#fff34894c2f65e5226d3041ac480b4513a163642"
@@ -2023,6 +2031,11 @@ qs@~6.5.2:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
   integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
+
+rambda@^7.1.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/rambda/-/rambda-7.2.0.tgz#b24a106513fac6aa734c3f86ac873377e55cd201"
+  integrity sha512-xW2ZcQh+AtRHdIN0RUix+gAwyfAeMBZA6SnLSblw1+YRqUx+eV4Eppg/ayDdrvSs6KegZYHYtSF6+I86Z5Owqg==
 
 randombytes@^2.1.0:
   version "2.1.0"
