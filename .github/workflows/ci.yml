@@ -1,9 +1,9 @@
-name: CI/CD 
+name: CI/CD
 
 on:
   pull_request:
   push:
-  
+
 jobs:
   audit:
     name: audit
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12
-      - run: npm i 
+      - run: npm i
       - run: npm audit --production --level-critical
       - run: npm run lint
   test:
