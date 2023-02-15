@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
--- Host: localhost    Database: admin_entities
+-- Host: localhost    Database: rwanda_entities
 -- ------------------------------------------------------
 -- Server version	5.7.27-0ubuntu0.18.04.1
 
