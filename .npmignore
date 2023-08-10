@@ -7,3 +7,4 @@ CONTRIBUTOR_COVENANT.md
 test/*
 .nyc_output
 .travis.yml
+/data/dump/rwanda_database.sql
