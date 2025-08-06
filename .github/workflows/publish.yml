@@ -16,20 +16,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - uses: pnpm/action-setup@v2
         with:
           version: 8
+          
       - uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: 'pnpm'
-
+          registry-url: 'https://registry.npmjs.org'
+          
       - run: pnpm install --no-frozen-lockfile
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: npm publish
+      
+      - name: Build package
+        run: pnpm --filter @rwanda/package build
+        
+      - name: Publish to npm
+        working-directory: ./packages/rwanda
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+          npm publish --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
