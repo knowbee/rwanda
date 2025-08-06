@@ -1,103 +1,156 @@
 # rwanda
 
-[![Build Status](https://travis-ci.org/knowbee/rwanda.svg?branch=master)](https://travis-ci.org/knowbee/rwanda)
-[![Maintainability](https://api.codeclimate.com/v1/badges/3f5c5282ff06934496dd/maintainability)](https://codeclimate.com/github/knowbee/rwanda/maintainability)
-[![npm](https://img.shields.io/npm/dt/rwanda.svg)](https://www.npmjs.com/package/rwanda)
 [![npm](https://img.shields.io/npm/v/rwanda.svg)](https://www.npmjs.com/package/rwanda)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![npm](https://img.shields.io/npm/dt/rwanda.svg)](https://www.npmjs.com/package/rwanda)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-[![NPM](https://nodei.co/npm/rwanda.png)](https://nodei.co/npm/rwanda/)
+A comprehensive TypeScript/JavaScript library for accessing administrative divisions of Rwanda. This package provides type-safe access to provinces, districts, sectors, cells, and villages in Rwanda.
 
-This is a simple npm package that returns provinces, districts, sectors, villages and cells found in Rwanda.
+Rwanda is administratively organized into:
+- 5 Provinces (including Kigali City)
+- 30 Districts
+- 416 Sectors
+- 2,148 Cells
+- 14,837 Villages
 
-Rwanda is organized in four provinces in addition to the Kigali city, 30 Districts, 416 Sectors, 2148 Cells and 14 837 Villages.
+## Installation
 
-## Example
+```bash
+# Using npm
+npm install rwanda
 
-```js
-const { Provinces, Districts } = require('rwanda');
+# Using yarn
+yarn add rwanda
 
-console.log(Provinces()); // [ 'East', 'Kigali', 'North', 'South', 'West' ]
-console.log(Districts()); // [ 'Bugesera', 'Gatsibo', 'Kayonza', 'Kirehe',...]
+# Using pnpm
+pnpm add rwanda
 ```
-
-And how to get districts of a given province
-
-```js
-const { Districts } = require('rwanda');
-
-console.log(Districts('kigali')); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge' ]
-console.log(Districts('Kigali', 'South')); // [ 'Gasabo', 'Kicukiro', 'Nyarugenge', 'Huye',.... ]
-```
-
-## Methods
-
-- [Provinces()](#provinces)
-- [Districts()](#districts)
-- [Sectors()](#sectors)
-- [Cells()](#cells)
-- [Villages()](#villages)
 
 ## Usage
 
-```js
-const { Provinces, Districts, Sectors, Cells, Villages } = require('rwanda');
+### JavaScript (CommonJS)
+
+```javascript
+const { Provinces, Districts } = require('rwanda');
+
+console.log(Provinces());
+// Output: ['East', 'Kigali', 'North', 'South', 'West']
+
+console.log(Districts('kigali'));
+// Output: ['Gasabo', 'Kicukiro', 'Nyarugenge']
 ```
 
-All inputs are case-insensitive.
+### TypeScript / ES Modules
 
-### Provinces()
+```typescript
+import { Provinces, Districts, Sectors } from 'rwanda';
 
-Returns array of country provinces.
+// Get all provinces
+const provinces: string[] = Provinces();
 
-```js
-['East', 'Kigali', 'North', 'South', 'West'];
+// Get districts in Kigali
+const kigaliDistricts: string[] = Districts('kigali');
+
+// Get sectors in Gasabo district
+const gasaboSectors: string[] = Sectors('kigali', 'gasabo');
 ```
 
-### Districts()
+## API Reference
 
-By default it returns an array of country districts, if no params (province) is given
+### `Provinces(): string[]`
 
-- Districts(province)
+Returns an array of all provinces in Rwanda.
 
-  If province is given it returns an array of districts found in that province.
-  It returns `undefined` if province is not found.
+```typescript
+import { Provinces } from 'rwanda';
 
-### Sectors()
-
-By default it returns array of country sectors, if no params (province, district) are given
-
-- Sectors(province, district)
-
-  If province and district are given it returns an array of sectors found from the given district in that province.
-  It returns `undefined` if either province or district is not found.
-
-### Cells()
-
-By default it returns an array of all country cells.
-
-- Cells(province, district, sector)
-
-  if province, district and sector are given it returns an array of Cells found from the given sector.
-  It returns `undefined` if either province, district or sector is not found.
-
-### Villages()
-
-By default it returns an array of all country villages.
-
-- Villages(province, district, sector, cell)
-
-  if province, district, sector and cell are given it returns an array of Villages found from the given cell.
-  It returns `undefined` if either province, district , sector or cell is not found.
-
-## Install
-
-```cli
-npm install rwanda
+const provinces = Provinces();
+// Returns: ['East', 'Kigali', 'North', 'South', 'West']
 ```
 
-or
+### `Districts(province?: string): string[] | undefined`
+
+- `province` (optional): Name of the province to filter districts
+
+Returns an array of districts. If a province is provided, returns only districts in that province.
+
+```typescript
+import { Districts } from 'rwanda';
+
+// Get all districts in Rwanda
+const allDistricts = Districts();
+
+// Get districts in Kigali
+const kigaliDistricts = Districts('kigali');
+// Returns: ['Gasabo', 'Kicukiro', 'Nyarugenge']
+```
+
+### `Sectors(province?: string, district?: string): string[] | undefined`
+
+- `province` (optional): Name of the province
+- `district` (optional): Name of the district to filter sectors
+
+Returns sectors based on the provided filters.
+
+```typescript
+import { Sectors } from 'rwanda';
+
+// Get all sectors in Rwanda
+const allSectors = Sectors();
+
+// Get sectors in Gasabo district, Kigali
+const gasaboSectors = Sectors('kigali', 'gasabo');
+```
+
+### `Cells(province?: string, district?: string, sector?: string): string[] | undefined`
+
+- `province` (optional): Name of the province
+- `district` (optional): Name of the district
+- `sector` (optional): Name of the sector to filter cells
+
+Returns cells based on the provided filters.
+
+### `Villages(province?: string, district?: string, sector?: string, cell?: string): string[] | undefined`
+
+- `province` (optional): Name of the province
+- `district` (optional): Name of the district
+- `sector` (optional): Name of the sector
+- `cell` (optional): Name of the cell to filter villages
+
+Returns villages based on the provided filters.
+
+## Type Safety
+
+The package includes TypeScript type definitions out of the box. All functions are properly typed:
+
+```typescript
+// TypeScript will infer the return type as string[]
+const districts: string[] = Districts('kigali');
+
+// TypeScript will show an error for invalid province names
+const invalid = Districts('invalid'); // TypeScript error
+```
+
+## Case Insensitivity
+
+All input parameters are case-insensitive:
+
+```typescript
+// All these are equivalent
+Districts('kigali');
+Districts('Kigali');
+Districts('KIGALI');
+```
+
+## Error Handling
+
+When invalid parameters are provided, the functions return `undefined`:
+
+```typescript
+const result = Districts('Nonexistent Province');
+console.log(result); // undefined
+```
 
 ```cli
 yarn add rwanda
@@ -107,6 +160,10 @@ yarn add rwanda
 
 <table>
   <tr>
+      <td align="center"><a href="https://github.com/shyakadavis"><img 
+    style="border-radius:50%"
+    src="https://github.com/shyakadavis.png" width="100px;" alt="Shyaka Davis"/><br /><sub><b>
+Shyaka Davis</b></sub></td>
     <td align="center"><a href="https://github.com/Karlmusingo"><img 
     style="border-radius:50%"
     src="https://github.com/Karlmusingo.png" width="100px;" alt="Karl MUSINGO"/><br /><sub><b>
@@ -123,6 +180,7 @@ Karl MUSINGO</b></sub></td>
     style="border-radius:50%" src="https://github.com/knowbee.png" width="100px;" alt="Igwaneza Bruce"/><br /><sub><b>Igwaneza Bruce</b></sub></td>
   </tr>
 </table>
+
 
 # Contribution
 
