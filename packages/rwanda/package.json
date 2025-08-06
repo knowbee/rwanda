@@ -1,5 +1,5 @@
 {
-	"name": "@rwanda/package",
+	"name": "rwanda",
 	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
 	"type": "module",
 	"files": ["dist"],

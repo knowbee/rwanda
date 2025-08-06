@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"test": "pnpm --filter @rwanda/package test",
-		"build": "pnpm --filter @rwanda/package build",
+		"test": "pnpm --filter rwanda test",
+		"build": "pnpm --filter rwanda build",
 		"lint": "pnpm dlx @biomejs/biome check packages/rwanda/src packages/rwanda/test",
 		"format": "pnpm dlx @biomejs/biome format packages/rwanda/src packages/rwanda/test --write",
 		"prepare": "husky install"
@@ -13,5 +13,9 @@
 		"@biomejs/biome": "1.2.2",
 		"@changesets/cli": "^2.26.2",
 		"husky": "^8.0.0"
-	}
+	},
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	]
 }

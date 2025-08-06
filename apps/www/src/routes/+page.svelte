@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Districts, Provinces, Sectors } from '@rwanda/package';
+	import { Districts, Provinces, Sectors } from 'rwanda';
 
 	console.log('Provinces: ', Provinces());
 	console.log('Districts: ', Districts(['Kigali', 'East']));

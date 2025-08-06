@@ -30,7 +30,7 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       
       - name: Build package
-        run: pnpm --filter @rwanda/package build
+        run: pnpm --filter rwanda build
         
       - name: Publish to npm
         working-directory: ./packages/rwanda

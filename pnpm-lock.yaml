@@ -23,9 +23,6 @@ importers:
       '@playwright/test':
         specifier: ^1.28.1
         version: 1.54.2
-      '@rwanda/package':
-        specifier: workspace:^
-        version: link:../../packages/rwanda
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
         version: 2.1.1(@sveltejs/kit@1.30.4(svelte@4.2.20)(vite@4.5.14(@types/node@24.2.0)))
@@ -53,6 +50,9 @@ importers:
       prettier-plugin-svelte:
         specifier: ^2.10.1
         version: 2.10.1(prettier@2.8.8)(svelte@4.2.20)
+      rwanda:
+        specifier: workspace:*
+        version: link:../../packages/rwanda
       svelte:
         specifier: ^4.0.5
         version: 4.2.20
