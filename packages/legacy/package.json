@@ -1,0 +1,37 @@
+{
+  "name": "rwanda",
+  "description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
+  "version": "2.1.6",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/knowbee/rwanda.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "mocha ./test/* --exit",
+    "fix-lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-mocha": "^10.1.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0"
+  },
+  "keywords": [
+    "rwanda",
+    "urwanda",
+    "intara",
+    "u rwanda",
+    "imirenge",
+    "utugari"
+  ],
+  "author": "Igwaneza Bruce <knowbeeinc@gmail.com>",
+  "homepage": "https://github.com/knowbee/rwanda"
+}

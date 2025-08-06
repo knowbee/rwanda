@@ -1,0 +1,51 @@
+{
+	"name": "@rwanda/package",
+	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
+	"type": "module",
+	"files": ["dist"],
+	"main": "./dist/rwanda.umd.cjs",
+	"module": "./dist/rwanda.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/rwanda.js",
+			"require": "./dist/rwanda.umd.cjs"
+		}
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "vitest run",
+		"test:watch": "vitest watch"
+	},
+	"devDependencies": {
+		"pathe": "^1.1.1",
+		"typescript": "^5.0.2",
+		"vite": "^4.4.5",
+		"vite-plugin-dts": "^3.6.0",
+		"vitest": "^0.34.6"
+	},
+	"license": "MIT",
+	"version": "2.1.6",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/knowbee/rwanda.git"
+	},
+	"keywords": [
+		"rwanda",
+		"urwanda",
+		"u rwanda",
+		"intara",
+		"uturere",
+		"akarere",
+		"imirenge",
+		"umurenge",
+		"utugari",
+		"akagari",
+		"imidugudu",
+		"umudugudu"
+	],
+	"author": "Igwaneza Bruce <knowbeeinc@gmail.com>",
+	"homepage": "https://github.com/knowbee/rwanda"
+}
