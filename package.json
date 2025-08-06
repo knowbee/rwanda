@@ -1,21 +1,40 @@
 {
-	"name": "@rwanda/main",
-	"version": "1.0.0",
-	"private": true,
+	"name": "rwanda",
+	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/rwanda.umd.cjs",
+	"module": "./dist/rwanda.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/rwanda.js",
+			"require": "./dist/rwanda.umd.cjs"
+		}
+	},
 	"scripts": {
-		"test": "pnpm --filter rwanda test",
-		"build": "pnpm --filter rwanda build",
-		"lint": "pnpm dlx @biomejs/biome check packages/rwanda/src packages/rwanda/test",
-		"format": "pnpm dlx @biomejs/biome format packages/rwanda/src packages/rwanda/test --write",
-		"prepare": "husky install"
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "vitest run",
+		"test:watch": "vitest watch"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.2.2",
-		"@changesets/cli": "^2.26.2",
-		"husky": "^8.0.0"
+		"husky": "^9.1.7",
+		"pathe": "^1.1.1",
+		"typescript": "^5.0.2",
+		"vite": "^4.4.5",
+		"vite-plugin-dts": "^3.6.0",
+		"vitest": "^0.34.6"
 	},
-	"workspaces": [
-		"packages/*",
-		"apps/*"
-	]
+	"license": "MIT",
+	"version": "3.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/knowbee/rwanda.git"
+	},
+	"author": "Igwaneza Bruce <knowbeeinc@gmail.com>",
+	"homepage": "https://github.com/knowbee/rwanda"
 }
