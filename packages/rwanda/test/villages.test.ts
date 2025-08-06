@@ -7,12 +7,12 @@ describe("🇷🇼 Rwanda - Villages", () => {
 		expectTypeOf(villages).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should return length of villages equal to 14837", function () {
+	it("should return length of villages equal to 14837", () => {
 		const villages = Villages();
 		expect(villages?.length).toEqual(14837);
 	});
 
-	it("should return an array of villages of a district", function () {
+	it("should return an array of villages of a district", () => {
 		const villages = Villages({
 			province: "Kigali",
 			district: "Kicukiro",
@@ -22,7 +22,7 @@ describe("🇷🇼 Rwanda - Villages", () => {
 		expectTypeOf(villages).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should not break on invalid params (province | district | sector | cell)", function () {
+	it("should not break on invalid params (province | district | sector | cell)", ()=> {
 		const villages = Villages({
 			province: "Kigali",
 			district: "Bugesera",
@@ -32,7 +32,7 @@ describe("🇷🇼 Rwanda - Villages", () => {
 		expect(villages).toBeUndefined();
 	});
 
-	it("should not break on sector typo", function () {
+	it("should not break on sector typo", ()=> {
 		const villages = Villages({
 			province: "Kigali",
 			district: "Kicukiro",
@@ -53,7 +53,7 @@ describe("🇷🇼 Rwanda - Villages", () => {
 	});
 
 	// ? These kinds of tests might become obsolete once all data becomes strictly typed.
-	it("should return undefined when there is a typo", function () {
+	it("should return undefined when there is a typo", ()=> {
 		const villages = Villages({
 			province: "Kigali",
 			district: "Kicukiro",

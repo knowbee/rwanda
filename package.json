@@ -12,7 +12,7 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "1.2.2",
 		"@changesets/cli": "^2.26.2",

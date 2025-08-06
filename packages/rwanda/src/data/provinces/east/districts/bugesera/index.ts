@@ -4,7 +4,7 @@
  * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  */
 
-import { District } from "@rwanda/types";
+import type { District } from "@rwanda/types";
 import { Gashora } from "./sectors/gashora";
 import { Juru } from "./sectors/juru";
 import { Kamabuye } from "./sectors/kamabuye";

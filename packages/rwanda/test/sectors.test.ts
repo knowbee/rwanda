@@ -437,17 +437,17 @@ describe("🇷🇼 Rwanda - Sectors", function () {
 		expect(sectors?.length).toEqual(416);
 	});
 
-	it("should return a string array or undefined", function () {
+	it("should return a string array or undefined", () => {
 		const sectors = Sectors();
 		expectTypeOf(sectors).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should return an array of sectors of a district", function () {
+	it("should return an array of sectors of a district", () => {
 		const sectors = Sectors({ province: "Kigali", district: "Kicukiro" });
 		expectTypeOf(sectors).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should not break on a district that does not exist in the province", function () {
+	it("should not break on a district that does not exist in the province", () => {
 		const sectors = Sectors({ province: "Kigali", district: "Bugesera" });
 		expect(sectors).toBeUndefined();
 	});

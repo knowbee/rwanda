@@ -7,12 +7,12 @@ describe("🇷🇼 Rwanda - Cells", () => {
 		expectTypeOf(cells).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should return length of cells equal to 2149", function () {
+	it("should return length of cells equal to 2149", () => {
 		const cells = Cells();
 		expect(cells?.length).toEqual(2149);
 	});
 
-	it("should return an array of cells of a district", function () {
+	it("should return an array of cells of a district", () => {
 		const cells = Cells({
 			province: "Kigali",
 			district: "Kicukiro",
