@@ -4,7 +4,7 @@
  * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  */
 
-import { Cell, Sector } from "@rwanda/types";
+import type { Cell, Sector } from "@rwanda/types";
 
 const Kabuga: Cell = ["Kabahigi", "Karambo Ya 1", "Miraramo", "Sanzare"];
 

@@ -1,0 +1,5 @@
+.npmignore
+yarn.lock
+CONTRIBUTING.md
+CONTRIBUTOR_COVENANT.md
+test/*

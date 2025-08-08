@@ -1,8 +1,8 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 import { Sectors } from "../src";
 
-describe("🇷🇼 Rwanda - Sectors", function () {
-	it("should return all sectors in Rwanda", function () {
+describe("🇷🇼 Rwanda - Sectors", () => {
+	it("should return all sectors in Rwanda", () => {
 		const sectors = Sectors();
 
 		// see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator
@@ -432,7 +432,7 @@ describe("🇷🇼 Rwanda - Sectors", function () {
 		]);
 	});
 
-	it("should return length of sectors equal to 416", function () {
+	it("should return length of sectors equal to 416", () => {
 		const sectors = Sectors();
 		expect(sectors?.length).toEqual(416);
 	});

@@ -1,5 +1,6 @@
 {
 	"name": "rwanda",
+	"version": "3.0.1",
 	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
 	"type": "module",
 	"files": [
@@ -19,22 +20,44 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"test": "vitest run",
-		"test:watch": "vitest watch"
+		"test:watch": "vitest watch",
+		"format": "biome format src/ test/ --write",
+		"format:check": "biome format --check src/ test/",
+		"lint": "biome lint src/ test/",
+		"lint:fix": "biome lint --apply src/ test/",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.1.4",
 		"husky": "^9.1.7",
-		"pathe": "^1.1.1",
-		"typescript": "^5.0.2",
-		"vite": "^4.4.5",
-		"vite-plugin-dts": "^3.6.0",
-		"vitest": "^0.34.6"
+		"pathe": "^2.0.3",
+		"typescript": "^5.9.2",
+		"vite": "^7.1.1",
+		"vite-plugin-dts": "^4.5.4",
+		"vitest": "^3.2.4"
+	},
+	"engines": {
+		"node": "20.19.0"
 	},
 	"license": "MIT",
-	"version": "3.0.0",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/knowbee/rwanda.git"
 	},
+	"keywords": [
+		"rwanda",
+		"urwanda",
+		"u rwanda",
+		"intara",
+		"uturere",
+		"akarere",
+		"imirenge",
+		"umurenge",
+		"utugari",
+		"akagari",
+		"imidugudu",
+		"umudugudu"
+	],
 	"author": "Igwaneza Bruce <knowbeeinc@gmail.com>",
 	"homepage": "https://github.com/knowbee/rwanda"
 }

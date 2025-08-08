@@ -55,7 +55,7 @@ describe("🇷🇼 Rwanda - Districts", () => {
 		}
 	});
 
-	it("should return length of districts equal to 30", function () {
+	it("should return length of districts equal to 30", () => {
 		const districts = Districts();
 		expect(districts).toHaveLength(30);
 	});

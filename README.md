@@ -160,6 +160,10 @@ yarn add rwanda
 
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/shyakadavis"><img 
+    style="border-radius:50%"
+    src="https://github.com/shyakadavis.png" width="100px;" alt="Shyaka Davis"/><br /><sub><b>
+Shyaka Davis</b></sub></td>
     <td align="center"><a href="https://github.com/Karlmusingo"><img 
     style="border-radius:50%"
     src="https://github.com/Karlmusingo.png" width="100px;" alt="Karl MUSINGO"/><br /><sub><b>
