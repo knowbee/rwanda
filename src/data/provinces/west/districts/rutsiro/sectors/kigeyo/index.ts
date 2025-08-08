@@ -4,7 +4,7 @@
  * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  */
 
-import { Cell, Sector } from "@rwanda/types";
+import type { Cell, Sector } from "@rwanda/types";
 
 const Buhindure: Cell = [
 	"Burambo",

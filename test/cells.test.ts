@@ -21,7 +21,7 @@ describe("🇷🇼 Rwanda - Cells", () => {
 		expectTypeOf(cells).toMatchTypeOf<string[] | undefined>();
 	});
 
-	it("should not break on invalid params (province | district | sector)", function () {
+	it("should not break on invalid params (province | district | sector)", () => {
 		const cells = Cells({
 			province: "Kigali",
 			district: "Bugesera",
@@ -30,7 +30,7 @@ describe("🇷🇼 Rwanda - Cells", () => {
 		expect(cells).toBeUndefined();
 	});
 
-	it("should not break on sector typo", function () {
+	it("should not break on sector typo", () => {
 		const cells = Cells({
 			province: "Kigali",
 			district: "Kicukiro",

@@ -2,7 +2,7 @@ name: Publish Package to npmjs
 on:
   push:
     branches:
-      - main
+      - master
   release:
     types: [published]
 jobs:
@@ -13,7 +13,7 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
+          node-version: '20.19.0'
           registry-url: 'https://registry.npmjs.org'
       - run: |
           if [ -e yarn.lock ]; then

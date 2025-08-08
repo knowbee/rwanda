@@ -4,7 +4,7 @@
  * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  */
 
-import { Cell, Sector } from "@rwanda/types";
+import type { Cell, Sector } from "@rwanda/types";
 
 const Kanyirabigogo: Cell = ["Giramata", "Kabana", "Mizingo", "Murambi"];
 
