@@ -9,19 +9,19 @@ jobs:
     name: audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.19.0'
-      - run: npm i
+          node-version: '20'
+      - run: npm install
       - run: npm audit --production --level-critical
   test:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: '20'
       - run: npm install
       - run: npm run test

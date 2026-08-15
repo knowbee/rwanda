@@ -1,6 +1,6 @@
 {
 	"name": "rwanda",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
 	"type": "module",
 	"files": [
@@ -28,16 +28,17 @@
 		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.1.4",
+		"@biomejs/biome": "^2.5.8",
 		"husky": "^9.1.7",
 		"pathe": "^2.0.3",
-		"typescript": "^5.9.2",
-		"vite": "^7.1.1",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^3.2.4"
+		"typescript": "^5.9.3",
+		"vite": "^7.3.6",
+		"vite-plugin-dts": "^5.0.3",
+		"vitest": "^3.2.7"
 	},
+	"packageManager": "yarn@1.22.22",
 	"engines": {
-		"node": "20.19.0"
+		"node": ">=20.19.0"
 	},
 	"license": "MIT",
 	"repository": {
