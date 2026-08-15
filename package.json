@@ -1,6 +1,6 @@
 {
 	"name": "rwanda",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
 	"type": "module",
 	"files": [
