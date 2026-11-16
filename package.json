@@ -1,6 +1,6 @@
 {
 	"name": "rwanda",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"description": "This package provides you access to provinces, districts, sectors, villages and cells found in Rwanda",
 	"type": "module",
 	"files": [
@@ -25,7 +25,8 @@
 		"format:check": "biome format --check src/ test/",
 		"lint": "biome lint src/ test/",
 		"lint:fix": "biome lint --apply src/ test/",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.8",
